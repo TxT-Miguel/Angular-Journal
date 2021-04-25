@@ -1,0 +1,42 @@
+<div class="posts">
+    <form (submit)="addPost()">
+        <label for="inputTitle">Title: </label>
+        <br>
+        <input
+            type="text"
+            name="inputTitle"
+            placeholder="Title Name"
+            [(ngModel)]="inputTitle"
+        /> <br>
+
+        <label for="inputAuthor">Author: </label>
+        <br>
+        <input 
+            type="text"
+            name="inputAuthor"
+            placeholder="Author name"
+            [(ngModel)]="inputAuthor"
+        /> <br>
+
+        <label for="inputEntry">Journal Entry</label>
+        <br>
+        <input
+            type="text"
+            name="inputEntry"
+            placeholder="Write Entry"
+            [(ngModel)]="inputEntry"
+        />
+        <input type="submit" value="Submit" class="post-submit">
+    </form>
+    <hr>
+    <div class="post" *ngFor="let post of posts; let i = index;">
+        <!-- <div class="id">{{i}}</div> -->
+        <h3>Title</h3>
+        <div class="content">{{post.content}}</div>
+        <h3>Author</h3>
+        <div class="author">{{post.author}}</div>
+        <h3>Journal Entry</h3>
+        <div class="entry">{{post.entry}}</div>
+        <hr>
+    </div>
+</div>
