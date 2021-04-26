@@ -15,7 +15,7 @@ export class PostComponent implements OnInit {
   inputAuthor:string = "";
   inputEntry:string = "";
 
-  postMessage = "message from Post";
+  // postMessage = "message from Post";
 
   message?:string;
 
@@ -35,6 +35,7 @@ export class PostComponent implements OnInit {
       entry: this.inputEntry
     });
 
+    // resets form data
     this.inputTitle= "";
     this.inputAuthor= "";
     this.inputEntry= "";
