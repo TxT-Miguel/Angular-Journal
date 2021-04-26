@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from './../models/Post'
+import { SharedService } from '../shared/shared.service';
+
+import { Post } from './../models/Post';
 
 @Component({
   selector: 'app-post',
@@ -11,14 +13,19 @@ export class PostComponent implements OnInit {
 
   inputTitle:string = "";
   inputAuthor:string = "";
-  inputEntry:string ="";
+  inputEntry:string = "";
 
-  constructor() { }
+  postMessage = "message from Post";
+
+  message?:string;
+
+  constructor(private shared:SharedService) { }
 
   ngOnInit(): void {
-    this.posts = [
+    this.posts = []
 
-    ]
+    // this.message = this.shared.getMessage();
+    this.shared.setMessage(this.posts);
   }
 
   addPost () {

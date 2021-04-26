@@ -1,1 +1,14 @@
-<p>This is view page</p>
+<p>This is view page </p>
+<!-- <h2>{{message}}</h2> -->
+
+<div *ngFor="let post of message; let i = index;">
+    <h3>Title</h3>
+    <div class="content">{{post.content}}</div>
+    <h3>Author</h3>
+    <div class="author">{{post.author}}</div>
+    <h3>Journal Entry</h3>
+    <div class="entry">{{post.entry}}</div>
+    <hr>
+
+    
+</div>
